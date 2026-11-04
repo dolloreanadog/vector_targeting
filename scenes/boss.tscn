@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://2td53wtr226w"]
+
+[ext_resource type="Script" uid="uid://csnsuarp6jbsg" path="res://scripts/boss/boss_controller.gd" id="1_dlmty"]
+[ext_resource type="Script" uid="uid://b1ekfwghugi75" path="res://scripts/boss/action_component.gd" id="2_neq0i"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kifso"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kifso"]
+radius = 2.0
+height = 8.0
+
+[node name="Boss" type="CharacterBody3D" unique_id=1526928885 node_paths=PackedStringArray("action_list", "action_container")]
+script = ExtResource("1_dlmty")
+action_list = [NodePath("ActionsContainer/ActionComponent"), NodePath("ActionsContainer/ActionComponent2")]
+action_container = NodePath("ActionsContainer")
+
+[node name="Visual" type="Node3D" parent="." unique_id=1852756095]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual" unique_id=1033779819]
+mesh = SubResource("CapsuleMesh_kifso")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2071701205]
+shape = SubResource("CapsuleShape3D_kifso")
+
+[node name="ActionsContainer" type="Node" parent="." unique_id=650906337]
+
+[node name="ActionComponent" type="Node" parent="ActionsContainer" unique_id=318431018]
+script = ExtResource("2_neq0i")
+action_name = "Swing"
+type_stat_x = 5
+type_stat_y = 6
+target_stat_x = 100.0
+times = 2
+metadata/_custom_type_script = "uid://b1ekfwghugi75"
+
+[node name="ActionComponent2" type="Node" parent="ActionsContainer" unique_id=245286106]
+script = ExtResource("2_neq0i")
+action_name = "Corpse Explosion"
+vector_type = 1
+type_stat_x = 12
+type_stat_y = 11
+type_stat_z = 16
+target_stat_x = -1000.0
+target_stat_y = 10.0
+target_stat_z = 1.0
+metadata/_custom_type_script = "uid://b1ekfwghugi75"
