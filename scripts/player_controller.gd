@@ -1,6 +1,11 @@
+@tool
 class_name PlayerController
 extends CharacterBody3D
 
+@onready var label_3d: Label3D = $Label3D
+@export var panel: PlayerPanel
+
+@export_group("Stats")
 @export var player_id: int
 #@export var ability_1: AbilityComponent
 #@export var ability_2: AbilityComponent
@@ -27,12 +32,32 @@ extends CharacterBody3D
 @export var player_class: float
 
 func _ready() -> void:
-	player_id = randi_range(0, 99999)
-	potential = randf_range(0, 99999)
+	player_id = randi_range(0, 9999)
+	potential = randf_range(0, 9999)
 	player_class = float(randi_range(0, 1))
+	label_3d.text = name
 
 
-func _grab_stat(stat: Global.StatTypes) -> float:
+func randomize_stats() -> void:
+	health = randf_range(0, 100)
+	deaths = float(randi_range(0, 100))
+	total_damage = randf_range(0, 9999)
+	dps = randf_range(0, 9999)
+	total_support = randf_range(0, 9999)
+	sps = randf_range(0, 9999)
+	players_near = float(randi_range(0, 100))
+	survival_time = randf_range(0, 9999)
+	boss_distance = randf_range(-9999, 9999)
+	short_health_pool = randf_range(-9999, 9999)
+	support_by = randf_range(0, 9999)
+	is_dead = float(randi_range(0, 1))
+	ability_1_cooldown = randf_range(0, 100)
+	ability_2_cooldown = randf_range(0, 100)
+	ability_3_cooldown = randf_range(0, 100)
+	ability_4_cooldown = randf_range(0, 100)
+
+
+func grab_stat(stat: Global.StatTypes) -> float:
 	match stat:
 		Global.StatTypes.ABILITY1COOLDOWN:
 			return ability_1_cooldown
@@ -71,46 +96,26 @@ func _grab_stat(stat: Global.StatTypes) -> float:
 	
 	return 0
 
-
-func randomize_stats() -> void:
-	health = randf_range(0, 100)
-	deaths = float(randi_range(0, 100))
-	total_damage = randf_range(0, 99999)
-	dps = randf_range(0, 99999)
-	total_support = randf_range(0, 99999)
-	sps = randf_range(0, 99999)
-	players_near = float(randi_range(0, 100))
-	survival_time = randf_range(0, 99999)
-	boss_distance = randf_range(-99999, 99999)
-	short_health_pool = randf_range(-99999, 99999)
-	support_by = randf_range(0, 99999)
-	is_dead = float(randi_range(0, 1))
-	ability_1_cooldown = randf_range(0, 100)
-	ability_2_cooldown = randf_range(0, 100)
-	ability_3_cooldown = randf_range(0, 100)
-	ability_4_cooldown = randf_range(0, 100)
-
-
 func grab_info_vector2(x: Global.StatTypes, y: Global.StatTypes) -> InfoVector2:
 	var new_info_vector: InfoVector2
-	var new_x: float = _grab_stat(x)
-	var new_y: float = _grab_stat(y)
+	var new_x: float = grab_stat(x)
+	var new_y: float = grab_stat(y)
 	new_info_vector = InfoVector2.new(self, Vector2(new_x, new_y))
 	return new_info_vector
 
 func grab_info_vector3(x: Global.StatTypes, y: Global.StatTypes, z: Global.StatTypes) -> InfoVector3:
 	var new_info_vector: InfoVector3
-	var new_x: float = _grab_stat(x)
-	var new_y: float = _grab_stat(y)
-	var new_z: float = _grab_stat(z)
+	var new_x: float = grab_stat(x)
+	var new_y: float = grab_stat(y)
+	var new_z: float = grab_stat(z)
 	new_info_vector = InfoVector3.new(self, Vector3(new_x, new_y, new_z))
 	return new_info_vector
 
 func grab_info_vector4(x: Global.StatTypes, y: Global.StatTypes, z: Global.StatTypes, w: Global.StatTypes) -> InfoVector4:
 	var new_info_vector: InfoVector4
-	var new_x: float = _grab_stat(x)
-	var new_y: float = _grab_stat(y)
-	var new_z: float = _grab_stat(z)
-	var new_w: float = _grab_stat(w)
+	var new_x: float = grab_stat(x)
+	var new_y: float = grab_stat(y)
+	var new_z: float = grab_stat(z)
+	var new_w: float = grab_stat(w)
 	new_info_vector = InfoVector4.new(self, Vector4(new_x, new_y, new_z, new_w))
 	return new_info_vector

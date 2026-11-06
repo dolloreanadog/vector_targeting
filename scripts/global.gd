@@ -21,6 +21,45 @@ enum StatTypes {
 	CLASS
 	}
 
+func stat_type_to_string(type: StatTypes) -> String:
+	match type:
+		StatTypes.NONE:
+			return "None"
+		StatTypes.ABILITY1COOLDOWN:
+			return "Ability 1 Cooldown"
+		StatTypes.ABILITY2COOLDOWN:
+			return "Ability 2 Cooldown"
+		StatTypes.ABILITY3COOLDOWN:
+			return "Ability 3 Cooldown"
+		StatTypes.ABILITY4COOLDOWN:
+			return "Ability 4 Cooldown"
+		StatTypes.HEALTH:
+			return "Health"
+		StatTypes.DEATHS:
+			return "Deaths"
+		StatTypes.TOTALDAMAGE:
+			return "Total Damage"
+		StatTypes.DPS:
+			return "DPS"
+		StatTypes.TOTALSUPPORT:
+			return "Total Support"
+		StatTypes.SPS:
+			return "SPS"
+		StatTypes.PLAYERSNEAR:
+			return "Players Near"
+		StatTypes.SHORTHEALTHPOOL:
+			return "Short Health Pool"
+		StatTypes.SURVIVALTIME:
+			return "Survival Pool"
+		StatTypes.DISTANCEBOSS:
+			return "Distance Boss"
+		StatTypes.SUPPORTEDBY:
+			return "Supported By"
+		StatTypes.ISDEAD:
+			return "Is Dead"
+		StatTypes.CLASS:
+			return "Class"
+	return ""
 #region Grab Info Targets
 func grab_targets_info_vector(x: StatTypes = StatTypes.NONE, y: StatTypes = StatTypes.NONE, z: StatTypes = StatTypes.NONE, w: StatTypes = StatTypes.NONE) -> Array[InfoVector]:
 	var vectors: Array[InfoVector]
@@ -41,24 +80,6 @@ func grab_targets_info_vector(x: StatTypes = StatTypes.NONE, y: StatTypes = Stat
 	
 	push_error("One or more parameters are wrong!")
 	return vectors
-
-#func grab_targets_info_vector2(x: StatTypes, y: StatTypes) -> Array[InfoVector2]:
-	#var vectors: Array[InfoVector2]
-	#for target: PlayerController in get_tree().get_nodes_in_group("Targets"):
-		#vectors.append(target.grab_info_vector2(x, y))
-	#return vectors
-#
-#func grab_targets_info_vector3(x: StatTypes, y: StatTypes, z: StatTypes) -> Array[InfoVector3]:
-	#var vectors: Array[InfoVector3]
-	#for target: PlayerController in get_tree().get_nodes_in_group("Targets"):
-		#vectors.append(target.grab_info_vector3(x, y, z))
-	#return vectors
-#
-#func grab_targets_info_vector4(x: StatTypes, y: StatTypes, z: StatTypes, w: StatTypes) -> Array[InfoVector4]:
-	#var vectors: Array[InfoVector4]
-	#for target: PlayerController in get_tree().get_nodes_in_group("Targets"):
-		#vectors.append(target.grab_info_vector4(x, y, z, w))
-	#return vectors
 #endregion
 
 #region Sorting
@@ -71,19 +92,4 @@ func sort_descending(a: InfoVector, b: InfoVector) -> bool:
 	if a.compare(b, 1):
 		return true
 	return false
-
-#func sort_targets_info_vector2(array: Array[InfoVector2]) -> Array[InfoVector2]:
-	#var vectors: Array[InfoVector2] = array
-	#vectors.sort_custom(sort_ascending)
-	#return vectors
-#
-#func sort_targets_info_vector3(array: Array[InfoVector3]) -> Array[InfoVector3]:
-	#var vectors: Array[InfoVector3] = array
-	#vectors.sort_custom(sort_ascending)
-	#return vectors
-#
-#func sort_targets_info_vector4(array: Array[InfoVector4]) -> Array[InfoVector4]:
-	#var vectors: Array[InfoVector4] = array
-	#vectors.sort_custom(sort_ascending)
-	#return vectors
 #endregion

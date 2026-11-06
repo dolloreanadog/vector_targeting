@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://c6mjyewykcggk" path="res://resources/materials/ground_grid.tres" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://2td53wtr226w" path="res://scenes/boss.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://gqbxv2ojwp5t" path="res://scenes/player.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dtp5brp143jhd" path="res://scenes/camera_3d.tscn" id="5_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,6 +16,218 @@ sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 2
 sky = SubResource("Sky_o5qli")
+
+[sub_resource type="Animation" id="Animation_tbgi4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Players/Player3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5430133, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Players/Player2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 1.5430133, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Players/Player:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2, 1.5430133, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tefeu"]
+resource_name = "check_line"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6, 3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Players/Player3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5430133, -0.49475503)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Players/Player2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 1.5430133, 1.505245)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Players/Player:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2, 1.5430133, -2.494755)]
+}
+
+[sub_resource type="Animation" id="Animation_jyhfs"]
+resource_name = "default_position"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Players/Player3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5430133, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Players/Player2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 1.5430133, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Players/Player:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2, 1.5430133, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbgi4"]
+_data = {
+&"RESET": SubResource("Animation_tbgi4"),
+&"check_line": SubResource("Animation_tefeu"),
+&"default_position": SubResource("Animation_jyhfs")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jyhfs"]
+animation = &"default_position"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tbgi4"]
+animation = &"check_line"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_tbgi4"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_jyhfs")
+blend_point_0/pos = -1.0
+blend_point_0/name = &"default_position"
+blend_point_1/node = SubResource("AnimationNodeAnimation_tbgi4")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"check_line"
 
 [node name="Main" type="Node3D" unique_id=282169498 node_paths=PackedStringArray("players", "boss")]
 script = ExtResource("1_jyhfs")
@@ -42,14 +255,60 @@ material = ExtResource("1_o5qli")
 
 [node name="Players" type="Node3D" parent="." unique_id=175366586]
 
-[node name="Player" parent="Players" unique_id=289092675 groups=["Targets"] instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 0)
+[node name="Player" parent="Players" unique_id=289092675 node_paths=PackedStringArray("panel") groups=["Targets"] instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5430133, 0)
+panel = NodePath("../../Camera3D/UI/HBoxContainer/PlayerPanel")
+player_id = 6253
+potential = 9878.421922703405
 
-[node name="Player2" parent="Players" unique_id=813664859 groups=["Targets"] instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.6, 0)
+[node name="Player2" parent="Players" unique_id=813664859 node_paths=PackedStringArray("panel") groups=["Targets"] instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5430133, 0)
+panel = NodePath("../../Camera3D/UI/HBoxContainer/PlayerPanel2")
+player_id = 3292
+potential = 3356.058496862774
+player_class = 1.0
 
-[node name="Player3" parent="Players" unique_id=1057759762 groups=["Targets"] instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 2.1000001)
+[node name="Player3" parent="Players" unique_id=1057759762 node_paths=PackedStringArray("panel") groups=["Targets"] instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5430133, 2)
+panel = NodePath("../../Camera3D/UI/HBoxContainer/PlayerPanel3")
+player_id = 2691
+potential = 2242.64102628639
+player_class = 1.0
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=964084108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 6)
+[node name="Camera3D" parent="." unique_id=1474102552 instance=ExtResource("5_tbgi4")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
+
+[node name="PlayerPanel" parent="Camera3D/UI/HBoxContainer" parent_id_path=PackedInt32Array(1474102552, 1905984318) index="1" unique_id=111653597 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../Players/Player")
+
+[node name="Label" parent="Camera3D/UI/HBoxContainer/PlayerPanel/VBoxContainer" parent_id_path=PackedInt32Array(1474102552, 1328686742) index="0" unique_id=566074434]
+text = "Player"
+
+[node name="PlayerPanel2" parent="Camera3D/UI/HBoxContainer" parent_id_path=PackedInt32Array(1474102552, 1905984318) index="2" unique_id=234620424 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../Players/Player2")
+
+[node name="Label" parent="Camera3D/UI/HBoxContainer/PlayerPanel2/VBoxContainer" parent_id_path=PackedInt32Array(1474102552, 1756980141) index="0" unique_id=1664762287]
+text = "Player2"
+
+[node name="PlayerPanel3" parent="Camera3D/UI/HBoxContainer" parent_id_path=PackedInt32Array(1474102552, 1905984318) index="3" unique_id=769157531 node_paths=PackedStringArray("player")]
+player = NodePath("../../../../Players/Player3")
+
+[node name="Label" parent="Camera3D/UI/HBoxContainer/PlayerPanel3/VBoxContainer" parent_id_path=PackedInt32Array(1474102552, 850095260) index="0" unique_id=1826010899]
+text = "Player3"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1280224605]
+libraries/ = SubResource("AnimationLibrary_tbgi4")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=229128074]
+tree_root = SubResource("AnimationNodeBlendSpace1D_tbgi4")
+anim_player = NodePath("../AnimationPlayer")
+parameters/blend_position = -1.0
+
+[node name="LineGroup" type="Node3D" parent="." unique_id=834527348]
+
+[connection signal="found_target" from="Boss/ActionsContainer/ActionComponent" to="." method="_on_action_component_found_target"]
+[connection signal="found_target" from="Boss/ActionsContainer/ActionComponent2" to="." method="_on_action_component_found_target"]
+
+[editable path="Boss"]
+[editable path="Camera3D"]

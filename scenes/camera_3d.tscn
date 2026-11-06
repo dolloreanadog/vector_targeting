@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://dtp5brp143jhd"]
+
+[ext_resource type="Script" uid="uid://kvak0h46j2ch" path="res://scripts/camera_3d.gd" id="1_v4apc"]
+[ext_resource type="PackedScene" uid="uid://cnd73xqwhweq7" path="res://scenes/stat_info_container.tscn" id="2_nstyr"]
+[ext_resource type="Script" uid="uid://jxjbo3s7dkks" path="res://scripts/player_panel.gd" id="3_d7376"]
+
+[node name="Camera3D" type="Camera3D" unique_id=1474102552]
+script = ExtResource("1_v4apc")
+
+[node name="UI" type="Control" parent="." unique_id=779108852]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=1905984318]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 192.0
+
+[node name="BossActionPanel" type="Panel" parent="UI/HBoxContainer" unique_id=109713171]
+custom_minimum_size = Vector2(320, 192)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer/BossActionPanel" unique_id=1236092634]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 70.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/BossActionPanel/VBoxContainer" unique_id=690409185]
+layout_mode = 2
+text = "Boss Current Action"
+
+[node name="HSeparator" type="HSeparator" parent="UI/HBoxContainer/BossActionPanel/VBoxContainer" unique_id=877137757]
+layout_mode = 2
+
+[node name="ActionNameLabel" type="Label" parent="UI/HBoxContainer/BossActionPanel/VBoxContainer" unique_id=320136799]
+layout_mode = 2
+text = "Action Name"
+
+[node name="HSeparator2" type="HSeparator" parent="UI/HBoxContainer/BossActionPanel/VBoxContainer" unique_id=469422296]
+layout_mode = 2
+
+[node name="StatInfoContainer" parent="UI/HBoxContainer/BossActionPanel/VBoxContainer" unique_id=1551655000 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer2" parent="UI/HBoxContainer/BossActionPanel/VBoxContainer" unique_id=846752916 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer3" parent="UI/HBoxContainer/BossActionPanel/VBoxContainer" unique_id=405480391 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer4" parent="UI/HBoxContainer/BossActionPanel/VBoxContainer" unique_id=1361580790 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="PlayerPanel" type="Panel" parent="UI/HBoxContainer" unique_id=111653597]
+custom_minimum_size = Vector2(228, 192)
+layout_mode = 2
+script = ExtResource("3_d7376")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer/PlayerPanel" unique_id=1328686742]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 192.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/PlayerPanel/VBoxContainer" unique_id=566074434]
+layout_mode = 2
+text = "Boss Current Action"
+
+[node name="HSeparator" type="HSeparator" parent="UI/HBoxContainer/PlayerPanel/VBoxContainer" unique_id=976318887]
+layout_mode = 2
+
+[node name="StatInfoContainer" parent="UI/HBoxContainer/PlayerPanel/VBoxContainer" unique_id=1151161337 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer2" parent="UI/HBoxContainer/PlayerPanel/VBoxContainer" unique_id=2083957404 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer3" parent="UI/HBoxContainer/PlayerPanel/VBoxContainer" unique_id=2014113316 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer4" parent="UI/HBoxContainer/PlayerPanel/VBoxContainer" unique_id=835925671 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="PlayerPanel2" type="Panel" parent="UI/HBoxContainer" unique_id=234620424]
+custom_minimum_size = Vector2(228, 192)
+layout_mode = 2
+script = ExtResource("3_d7376")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer/PlayerPanel2" unique_id=1756980141]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 192.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/PlayerPanel2/VBoxContainer" unique_id=1664762287]
+layout_mode = 2
+text = "Boss Current Action"
+
+[node name="HSeparator" type="HSeparator" parent="UI/HBoxContainer/PlayerPanel2/VBoxContainer" unique_id=1402310803]
+layout_mode = 2
+
+[node name="StatInfoContainer" parent="UI/HBoxContainer/PlayerPanel2/VBoxContainer" unique_id=1256102416 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer2" parent="UI/HBoxContainer/PlayerPanel2/VBoxContainer" unique_id=514898130 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer3" parent="UI/HBoxContainer/PlayerPanel2/VBoxContainer" unique_id=1936309472 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer4" parent="UI/HBoxContainer/PlayerPanel2/VBoxContainer" unique_id=529025280 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="PlayerPanel3" type="Panel" parent="UI/HBoxContainer" unique_id=769157531]
+custom_minimum_size = Vector2(228, 192)
+layout_mode = 2
+script = ExtResource("3_d7376")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer/PlayerPanel3" unique_id=850095260]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 192.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/PlayerPanel3/VBoxContainer" unique_id=1826010899]
+layout_mode = 2
+text = "Boss Current Action"
+
+[node name="HSeparator" type="HSeparator" parent="UI/HBoxContainer/PlayerPanel3/VBoxContainer" unique_id=1542498697]
+layout_mode = 2
+
+[node name="StatInfoContainer" parent="UI/HBoxContainer/PlayerPanel3/VBoxContainer" unique_id=2095812147 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer2" parent="UI/HBoxContainer/PlayerPanel3/VBoxContainer" unique_id=1817281540 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer3" parent="UI/HBoxContainer/PlayerPanel3/VBoxContainer" unique_id=1869500283 instance=ExtResource("2_nstyr")]
+layout_mode = 2
+
+[node name="StatInfoContainer4" parent="UI/HBoxContainer/PlayerPanel3/VBoxContainer" unique_id=286958566 instance=ExtResource("2_nstyr")]
+layout_mode = 2

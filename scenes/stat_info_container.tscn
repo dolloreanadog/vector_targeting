@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cnd73xqwhweq7"]
+
+[ext_resource type="Script" uid="uid://c0dtr5iq6avi1" path="res://scenes/stat_info_container.gd" id="1_6hant"]
+
+[node name="StatInfoContainer" type="HBoxContainer" unique_id=1551655000]
+script = ExtResource("1_6hant")
+stat_name = "StatName"
+stat_number = "x"
+
+[node name="StatNameLabel" type="Label" parent="." unique_id=408285777]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "StatName"
+
+[node name="StatNumberLabel" type="Label" parent="." unique_id=1466350686]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "x"

@@ -44,6 +44,7 @@ enum TargetMode {CLOSEST, FARTHEST, CUSTOM}
 
 signal action_started(action: String)
 signal action_ended(action: String)
+signal found_target(targets: Array[InfoVector], types: Array[Global.StatTypes], coord: Vector4, new_name: String)
 
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings: PackedStringArray
@@ -104,6 +105,7 @@ func grab_targets() -> Array[InfoVector]:
 		new_array.append(array[x])
 	
 	#assert(false, "Couldn't find target: %s" % [vector_type])
+	
 	return new_array
 
 func play_action() -> void:
@@ -117,5 +119,13 @@ func _start_action(info_vectors: Array[InfoVector]) -> void:
 	# TODO: We want to show targeted players, but also draw a line between boss and targeted player
 	print("Targets: %s" % [action_name])
 	print(info_vectors)
+	emit_targets(info_vectors)
 	for target: InfoVector in info_vectors:
 		print("Target name: %s" % [target.target.name])
+
+# Shouldn't in actual version
+func emit_targets(info_vectors: Array[InfoVector]) -> void:
+	# targets: Array[InfoVector], types: Array[Global.StatTypes], coord: Vector4
+	var new_types: Array[Global.StatTypes] = [type_stat_x, type_stat_y, type_stat_z, type_stat_w]
+	var new_coord: Vector4 = Vector4(target_stat_x, target_stat_y, target_stat_z, target_stat_w)
+	found_target.emit(info_vectors, new_types, new_coord, action_name)

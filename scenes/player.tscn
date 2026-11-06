@@ -16,3 +16,9 @@ mesh = SubResource("CapsuleMesh_kifso")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1017686518]
 shape = SubResource("CapsuleShape3D_u8vuu")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=353819745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+billboard = 1
+text = "name"
+font_size = 48
